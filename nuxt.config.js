@@ -4,7 +4,8 @@ const env = process.env
 const isProd = env.MODE == 'prod'
 const mockServer =
   'https://easy-mock.com/mock/5c1b3895fe5907404e654045/femessage-mock'
-
+const myapi =
+  'http://127.0.0.1:3000/mock/11/test'
 // 不能以斜杠结尾
 let apiServer = process.env.API_SERVER
 // 必须以斜杠结尾
@@ -14,6 +15,7 @@ const config = {
   aliIconFont: '',
   env: {
     mock: {
+      '/data': myapi,
       '/deepexi-tenant': mockServer,
       '/deepexi-permission': mockServer
     },
@@ -67,7 +69,7 @@ module.exports = {
     /*
      ** Run ESLint on save
      */
-    extend(config, {isDev}) {
+    extend(config, { isDev }) {
       if (isDev && process.client) {
         config.module.rules.push({
           enforce: 'pre',
@@ -84,9 +86,9 @@ module.exports = {
   head: {
     title: 'Optimus',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {'http-equiv': 'x-ua-compatible', content: 'IE=edge, chrome=1'},
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { 'http-equiv': 'x-ua-compatible', content: 'IE=edge, chrome=1' },
       {
         hid: 'description',
         name: 'description',
@@ -128,6 +130,6 @@ module.exports = {
       src: '~/plugins/element'
     }
   ],
-  modules: [['@nuxtjs/axios'], ['@nuxtjs/dotenv', {path: './'}]],
+  modules: [['@nuxtjs/axios'], ['@nuxtjs/dotenv', { path: './' }]],
   axios
 }
