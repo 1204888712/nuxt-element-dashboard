@@ -5,7 +5,7 @@ const isProd = env.MODE == 'prod'
 const mockServer =
   'https://easy-mock.com/mock/5c1b3895fe5907404e654045/femessage-mock'
 const myapi =
-  'http://127.0.0.1:3000/mock/11/test'
+  'http://127.0.0.1:3001/mock/11/test'
 // 不能以斜杠结尾
 let apiServer = process.env.API_SERVER
 // 必须以斜杠结尾

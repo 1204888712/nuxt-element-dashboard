@@ -134,6 +134,7 @@ export default {
           atClick: row => {
             // 此处进行put操作，提交数据更改，此处使用本地定时器模拟
             setTimeout(() => {
+              this.$message({message: "上架成功！", type: 'success'});
               row.status = '上架'
             }, 300)
             return Promise.resolve(false)
@@ -148,6 +149,7 @@ export default {
           atClick: row => {
             // 此处进行put操作，提交数据更改，此处使用本地定时器模拟
             setTimeout(() => {
+              this.$message({message: "下架成功！", type: 'success'});
               row.status = '下架'
             }, 300)
             return Promise.resolve(false)
